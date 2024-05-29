@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" asp-append-version="true">
+
+	<link rel="stylesheet" href="~/css/animate.css" asp-append-version="true" />
+
+	<link rel="stylesheet" href="~/css/owl.carousel.min.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/magnific-popup.css" asp-append-version="true" />
+
+	<link rel="stylesheet" href="~/css/flaticon.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+	<div class="wrap">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-md-3 d-flex align-items-center">
+					<a class="navbar-brand" href="index.html">Ritmichniy<span>.INC</span></a>
+				</div>
+				<div class="col-md-7">
+					<div class="row">
+						<div class="col">
+							<div class="top-wrap d-flex">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-location-arrow"></span>
+								</div>
+								<div class="text">
+									<span>Адрес</span>
+									<a href="https://yandex.ru/maps/-/CCUgnPAgWC">
+										@Html.Raw("Бакунинская ул., 81, стр. 2, Москва")
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="top-wrap d-flex">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-location-arrow"></span>
+								</div>
+								<div class="text">
+									<span>Телефон</span>
+									<a href="tel:@Html.Raw("+79671394143")">
+										+7 (967) 139-41-43
+									</a>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-3 d-flex align-items-center">
+							<div class="social-media">
+								<p class="mb-0 d-flex">
+									<a href="#" class="d-flex align-items-center justify-content-center">
+										<span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>
+									</a>
+									<a href="#" class="d-flex align-items-center justify-content-center">
+										<span class="fa fa-twitter"><i class="sr-only">Twitter</i></span>
+									</a>
+									<a href="#" class="d-flex align-items-center justify-content-center">
+										<span class="fa fa-instagram"><i class="sr-only">Instagram</i></span>
+									</a>
+									<a href="#" class="d-flex align-items-center justify-content-center">
+										<span class="fa fa-vk"><i class="sr-only">VK</i></span>
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg ftco-navbar-light">
+		<div class="container">
+			<div>
+				<ul class="navbar-nav">
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+						<a href="@Url.Action("Index", "Home")" class="nav-link">Главная</a>
+					</li>
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "active" : "")">
+						<a href="@Url.Action("Services", "Home")" class="nav-link">Услуги</a>
+					</li>
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Team" ? "active" : "")">
+						<a href="@Url.Action("Team", "Home")" class="nav-link">Команда</a>
+					</li>
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Project" ? "active" : "")">
+						<a href="@Url.Action("Project", "Home")" class="nav-link">Галерея</a>
+					</li>
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">
+						<a href="@Url.Action("About", "Home")" class="nav-link">О нас</a>
+					</li>
+					<li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")">
+
+						<a href="@Url.Action("Contact", "Home")" class="nav-link">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div>
+		<main role="main">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="footer ftco-counter">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg">
+					<div class="ftco-footer-widget">
+						<h2 class="logo"><a href="#">Ritmichniy<span>.INC</span></a></h2>
+						<p>
+							Преимущество нашего
+							тех.центра — гарантия качества выполняемых работ, а самое главное — индивидуальный подход и
+							внимание к каждому нашему клиенту.
+						</p>
+						<ul class="ftco-footer-social list-unstyled mt-4">
+							<li class=""><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li class=""><a href="#"><span class="fa fa-facebook"></span></a></li>
+							<li class=""><a href="#"><span class="fa fa-instagram"></span></a></li>
+							<li class=""><a href="#"><span class="fa fa-vk"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="ftco-footer-widget ml-md-5">
+						<h2>Услуги</h2>
+						<ul class="list-unstyled">
+							<li>
+								<a class="py-1 d-block"><span class="fa fa-check mr-3"></span>Замена масла</a>
+							</li>
+							<li>
+								<a class="py-1 d-block"><span class="fa fa-check mr-3"></span>Ремонт двигателя</a>
+							</li>
+							<li>
+								<a class="py-1 d-block"><span class="fa fa-check mr-3"></span>Замена аккумулятора</a>
+							</li>
+							<li>
+								<a class="py-1 d-block"><span class="fa fa-check mr-3"></span>Ремонт электроники</a>
+							</li>
+							<li>
+								<a class="py-1 d-block"><span class="fa fa-check mr-3"></span>Замена шин</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="ftco-footer-widget">
+						<h2 class="ftco-heading-2">Контакты</h2>
+						<div class="block-23">
+							<ul>
+								<li>
+									<span class="icon fa fa-map-marker"></span><a href="https://yandex.ru/maps/-/CCUgnPAgWC">
+										@Html.Raw("Бакунинская ул., 81, стр. 2, Москва")
+									</a>
+								</li>
+								<li>
+									<a href="tel:@Html.Raw("+79671394143")">
+										<span class="icon fa fa-phone"></span><span class="text">+7 (967) 139-41-43</span>
+									</a>
+								</li>
+								<li>
+									<a href="mailto:andrey.kaverin.02@mail.ru">
+										<span class="icon fa fa-paper-plane"></span><span class="text">andrey.kaverin.02@mail.ru</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg">
+					<div class="ftco-footer-widget">
+						<h2>Часы работы</h2>
+						<div class="opening-hours">
+							<h4>ДНИ РАБОТЫ:</h4>
+							<p class="pl-2">
+								<span>Понедельник - пятница: с 9:00-20:00</span>
+								<span>Суббота - воскресенье : 9:00-17:00</span>
+							</p>
+							<h4>НЕ РАБОЧИЕ ДНИ:</h4>
+							<p class="pl-2">
+								<span>Все офицальные праздники</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<p>
+					Ritmichniy.INC &copy;
+					@DateTime.Now.Year Все права защищены
+				</p>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.min.js" asp-append-version="true"></script>
+	<script src="~/js/jquery-migrate-3.0.1.min.js" asp-append-version="true"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" asp-append-version="true"></script>
+	<!-- Остальные скрипты -->
+
+	<script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+	<script src="~/js/bootstrap.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.waypoints.min.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.stellar.min.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.animateNumber.min.js" asp-append-version="true"></script>
+	<script src="~/js/bootstrap-datepicker.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.timepicker.min.js" asp-append-version="true"></script>
+	<script src="~/js/owl.carousel.min.js" asp-append-version="true"></script>
+	<script src="~/js/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+	<script src="~/js/scrollax.min.js" asp-append-version="true"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" asp-append-version="true"></script>
+	<script src="~/js/yandex-map.js" asp-append-version="true"></script>
+	<script src="~/js/main.js" asp-append-version="true"></script>
+	<script asp-append-version="true">
+		$(document).ready(function () {
+			$('#PhoneNumber').mask('+7 (999) 999-9999');
+		});
+	</script>
+
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3777BDDF-5248-44F6-9A37-25EBA7A85927}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarRepair</RootNamespace>
+    <AssemblyName>CarRepair</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Brand.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Car.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\CarRepairModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRepairModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\CarRepairModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\CarRepairModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarRepairModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Client.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Color.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Department.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Detail.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DetailRepair.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Employee.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Model.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Repair.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Role.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Specialisation.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Base\sysdiagrams.cs">
+      <DependentUpon>CarRepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Entity\Brand.cs" />
+    <Compile Include="Entity\Car.cs" />
+    <Compile Include="Entity\Client.cs" />
+    <Compile Include="Entity\Color.cs" />
+    <Compile Include="Entity\Department.cs" />
+    <Compile Include="Entity\Detail.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\Model.cs" />
+    <Compile Include="Base\ReportDataSet.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Role.cs" />
+    <Compile Include="Entity\Specialisation.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Window\AddEditRepairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\AddEditRepairForm.Designer.cs">
+      <DependentUpon>AddEditRepairForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\BrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\BrandForm.Designer.cs">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\CarPickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\CarPickForm.Designer.cs">
+      <DependentUpon>CarPickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\CarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\CarsForm.Designer.cs">
+      <DependentUpon>CarsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\ClientPickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ClientPickForm.Designer.cs">
+      <DependentUpon>ClientPickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\DashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\DatePickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\DatePickForm.Designer.cs">
+      <DependentUpon>DatePickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\DepartmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\DepartmentsForm.Designer.cs">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Window\ModelsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ModelsForm.Designer.cs">
+      <DependentUpon>ModelsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\MonthPickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\MonthPickForm.Designer.cs">
+      <DependentUpon>MonthPickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\PartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\PartsForm.Designer.cs">
+      <DependentUpon>PartsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\PeoplePickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\PeoplePickForm.Designer.cs">
+      <DependentUpon>PeoplePickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\PeoplsPickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\PeoplsPickForm.Designer.cs">
+      <DependentUpon>PeoplsPickForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\Reporting.Designer.cs">
+      <DependentUpon>Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Sing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\Sing.Designer.cs">
+      <DependentUpon>Sing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\SpecialisationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\SpecialisationForm.Designer.cs">
+      <DependentUpon>SpecialisationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\YearPickForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\YearPickForm.Designer.cs">
+      <DependentUpon>YearPickForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Window\AddEditRepairForm.resx">
+      <DependentUpon>AddEditRepairForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\BrandForm.resx">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\CarPickForm.resx">
+      <DependentUpon>CarPickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\CarsForm.resx">
+      <DependentUpon>CarsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\DatePickForm.resx">
+      <DependentUpon>DatePickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\MonthPickForm.resx">
+      <DependentUpon>MonthPickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\PartsForm.resx">
+      <DependentUpon>PartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\PeoplePickForm.resx">
+      <DependentUpon>PeoplePickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\PeoplsPickForm.resx">
+      <DependentUpon>PeoplsPickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Report\Cars.rdlc" />
+    <EmbeddedResource Include="Window\Report\CharPeople.rdlc" />
+    <EmbeddedResource Include="Window\Report\CharPeopls.rdlc" />
+    <EmbeddedResource Include="Window\Report\CharMonth.rdlc" />
+    <EmbeddedResource Include="Window\Report\CharYear.rdlc" />
+    <EmbeddedResource Include="Window\Report\Check.rdlc" />
+    <EmbeddedResource Include="Window\ClientPickForm.resx">
+      <DependentUpon>ClientPickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\DepartmentsForm.resx">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\ModelsForm.resx">
+      <DependentUpon>ModelsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Report\Clients.rdlc" />
+    <EmbeddedResource Include="Window\Reporting.resx">
+      <DependentUpon>Reporting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Report\Work.rdlc" />
+    <EmbeddedResource Include="Window\Sing.resx">
+      <DependentUpon>Sing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\SpecialisationForm.resx">
+      <DependentUpon>SpecialisationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\YearPickForm.resx">
+      <DependentUpon>YearPickForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EntityDeploy Include="Base\CarRepairModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CarRepairModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Base\CarRepairModel.edmx.diagram">
+      <DependentUpon>CarRepairModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Base\ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Base\ReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Base\ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base\CarRepairModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarRepairModel.edmx</DependentUpon>
+      <LastGenOutput>CarRepairModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Base\CarRepairModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarRepairModel.edmx</DependentUpon>
+      <LastGenOutput>CarRepairModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="icon.ico" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\Exit.png" />
+    <Content Include="Resources\Выполненный.png" />
+    <Content Include="Resources\Выход.png" />
+    <Content Include="Resources\Детали заказа.png" />
+    <Content Include="Resources\Добавить автомобиль.png" />
+    <Content Include="Resources\Добавить деталь.png" />
+    <Content Include="Resources\Добавить.png" />
+    <Content Include="Resources\Добавление клиента.png" />
+    <Content Include="Resources\Запчасти.png" />
+    <Content Include="Resources\Изменить.png" />
+    <Content Include="Resources\История заказов за период.png" />
+    <Content Include="Resources\История отделов.png" />
+    <Content Include="Resources\История по автомобилю.png" />
+    <Content Include="Resources\История по клиенту.png" />
+    <None Include="Resources\Календарь.png" />
+    <Content Include="Resources\Клиенты.png" />
+    <Content Include="Resources\Марка автомобилей.png" />
+    <Content Include="Resources\Отдел.png" />
+    <Content Include="Resources\Отмена.png" />
+    <Content Include="Resources\Отчетность.png" />
+    <None Include="Resources\Печать.png" />
+    <Content Include="Resources\Программа.png" />
+    <None Include="Resources\Ремонт.png" />
+    <Content Include="Resources\Сотрудники.png" />
+    <Content Include="Resources\Сохранить.png" />
+    <Content Include="Resources\Справочники.png" />
+    <Content Include="Resources\Удалить.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

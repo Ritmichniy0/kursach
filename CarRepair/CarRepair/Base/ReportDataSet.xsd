@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportDataSet" targetNamespace="http://tempuri.org/ReportDataSet.xsd" xmlns:mstns="http://tempuri.org/ReportDataSet.xsd" xmlns="http://tempuri.org/ReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ReportConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ReportConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CarRepair.Properties.Settings.GlobalReference.Default.ReportConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ReportDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CharYearMonthReport" msprop:Generator_RowEvHandlerName="CharYearMonthReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CharYearMonthReportRowDeleted" msprop:Generator_RowDeletingName="CharYearMonthReportRowDeleting" msprop:Generator_RowEvArgName="CharYearMonthReportRowChangeEvent" msprop:Generator_TablePropName="CharYearMonthReport" msprop:Generator_RowChangedName="CharYearMonthReportRowChanged" msprop:Generator_UserTableName="CharYearMonthReport" msprop:Generator_RowChangingName="CharYearMonthReportRowChanging" msprop:Generator_RowClassName="CharYearMonthReportRow" msprop:Generator_TableClassName="CharYearMonthReportDataTable" msprop:Generator_TableVarName="tableCharYearMonthReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Car" msprop:Generator_ColumnPropNameInTable="CarColumn" msprop:Generator_ColumnPropNameInRow="Car" msprop:Generator_UserColumnName="Car" msprop:Generator_ColumnVarNameInTable="columnCar" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_UserColumnName="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_UserColumnName="DetailPrice" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CheackReport" msprop:Generator_RowEvHandlerName="CheackReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CheackReportRowDeleted" msprop:Generator_RowDeletingName="CheackReportRowDeleting" msprop:Generator_RowEvArgName="CheackReportRowChangeEvent" msprop:Generator_TablePropName="CheackReport" msprop:Generator_RowChangedName="CheackReportRowChanged" msprop:Generator_UserTableName="CheackReport" msprop:Generator_RowChangingName="CheackReportRowChanging" msprop:Generator_RowClassName="CheackReportRow" msprop:Generator_TableClassName="CheackReportDataTable" msprop:Generator_TableVarName="tableCheackReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_UserColumnName="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DetailNote" msprop:Generator_ColumnPropNameInTable="DetailNoteColumn" msprop:Generator_ColumnPropNameInRow="DetailNote" msprop:Generator_UserColumnName="DetailNote" msprop:Generator_ColumnVarNameInTable="columnDetailNote" type="xs:string" minOccurs="0" />
+              <xs:element name="Detail" msprop:Generator_ColumnPropNameInTable="DetailColumn" msprop:Generator_ColumnPropNameInRow="Detail" msprop:Generator_UserColumnName="Detail" msprop:Generator_ColumnVarNameInTable="columnDetail" type="xs:string" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_UserColumnName="DetailPrice" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountDetail" msprop:Generator_ColumnPropNameInTable="CountDetailColumn" msprop:Generator_ColumnPropNameInRow="CountDetail" msprop:Generator_UserColumnName="CountDetail" msprop:Generator_ColumnVarNameInTable="columnCountDetail" type="xs:int" minOccurs="0" />
+              <xs:element name="Employee" msprop:Generator_ColumnPropNameInTable="EmployeeColumn" msprop:Generator_ColumnPropNameInRow="Employee" msprop:Generator_UserColumnName="Employee" msprop:Generator_ColumnVarNameInTable="columnEmployee" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeePrice" msprop:Generator_ColumnPropNameInTable="EmployeePriceColumn" msprop:Generator_ColumnPropNameInRow="EmployeePrice" msprop:Generator_UserColumnName="EmployeePrice" msprop:Generator_ColumnVarNameInTable="columnEmployeePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClientName" msprop:Generator_ColumnPropNameInTable="ClientNameColumn" msprop:Generator_ColumnPropNameInRow="ClientName" msprop:Generator_UserColumnName="ClientName" msprop:Generator_ColumnVarNameInTable="columnClientName" type="xs:string" minOccurs="0" />
+              <xs:element name="NumberCheck" msprop:Generator_ColumnPropNameInTable="NumberCheckColumn" msprop:Generator_ColumnPropNameInRow="NumberCheck" msprop:Generator_UserColumnName="NumberCheck" msprop:Generator_ColumnVarNameInTable="columnNumberCheck" type="xs:int" minOccurs="0" />
+              <xs:element name="EmployeeDoing" msprop:Generator_ColumnPropNameInTable="EmployeeDoingColumn" msprop:Generator_ColumnPropNameInRow="EmployeeDoing" msprop:Generator_UserColumnName="EmployeeDoing" msprop:Generator_ColumnVarNameInTable="columnEmployeeDoing" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CarReport" msprop:Generator_RowEvHandlerName="CarReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CarReportRowDeleted" msprop:Generator_RowDeletingName="CarReportRowDeleting" msprop:Generator_RowEvArgName="CarReportRowChangeEvent" msprop:Generator_TablePropName="CarReport" msprop:Generator_RowChangedName="CarReportRowChanged" msprop:Generator_UserTableName="CarReport" msprop:Generator_RowChangingName="CarReportRowChanging" msprop:Generator_RowClassName="CarReportRow" msprop:Generator_TableClassName="CarReportDataTable" msprop:Generator_TableVarName="tableCarReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Car" msprop:Generator_ColumnPropNameInTable="CarColumn" msprop:Generator_ColumnPropNameInRow="Car" msprop:Generator_UserColumnName="Car" msprop:Generator_ColumnVarNameInTable="columnCar" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_UserColumnName="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DetailNote" msprop:Generator_ColumnPropNameInTable="DetailNoteColumn" msprop:Generator_ColumnPropNameInRow="DetailNote" msprop:Generator_UserColumnName="DetailNote" msprop:Generator_ColumnVarNameInTable="columnDetailNote" type="xs:string" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_UserColumnName="DetailPrice" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Employee" msprop:Generator_ColumnPropNameInTable="EmployeeColumn" msprop:Generator_ColumnPropNameInRow="Employee" msprop:Generator_UserColumnName="Employee" msprop:Generator_ColumnVarNameInTable="columnEmployee" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeePrice" msprop:Generator_ColumnPropNameInTable="EmployeePriceColumn" msprop:Generator_ColumnPropNameInRow="EmployeePrice" msprop:Generator_UserColumnName="EmployeePrice" msprop:Generator_ColumnVarNameInTable="columnEmployeePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountDetail" msprop:Generator_ColumnPropNameInTable="CountDetailColumn" msprop:Generator_ColumnPropNameInRow="CountDetail" msprop:Generator_UserColumnName="CountDetail" msprop:Generator_ColumnVarNameInTable="columnCountDetail" type="xs:int" minOccurs="0" />
+              <xs:element name="Detail" msprop:Generator_ColumnPropNameInTable="DetailColumn" msprop:Generator_ColumnPropNameInRow="Detail" msprop:Generator_UserColumnName="Detail" msprop:Generator_ColumnVarNameInTable="columnDetail" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ClientReport" msprop:Generator_RowClassName="ClientReportRow" msprop:Generator_RowEvHandlerName="ClientReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientReportRowDeleted" msprop:Generator_RowDeletingName="ClientReportRowDeleting" msprop:Generator_RowEvArgName="ClientReportRowChangeEvent" msprop:Generator_TablePropName="ClientReport" msprop:Generator_RowChangedName="ClientReportRowChanged" msprop:Generator_UserTableName="ClientReport" msprop:Generator_RowChangingName="ClientReportRowChanging" msprop:Generator_TableClassName="ClientReportDataTable" msprop:Generator_TableVarName="tableClientReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientName" msprop:Generator_UserColumnName="ClientName" msprop:Generator_ColumnPropNameInTable="ClientNameColumn" msprop:Generator_ColumnPropNameInRow="ClientName" msprop:Generator_ColumnVarNameInTable="columnClientName" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairDate" msprop:Generator_UserColumnName="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_ColumnVarNameInTable="columnRepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DetailNote" msprop:Generator_UserColumnName="DetailNote" msprop:Generator_ColumnPropNameInTable="DetailNoteColumn" msprop:Generator_ColumnPropNameInRow="DetailNote" msprop:Generator_ColumnVarNameInTable="columnDetailNote" type="xs:string" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_UserColumnName="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Employee" msprop:Generator_UserColumnName="Employee" msprop:Generator_ColumnPropNameInTable="EmployeeColumn" msprop:Generator_ColumnPropNameInRow="Employee" msprop:Generator_ColumnVarNameInTable="columnEmployee" type="xs:string" minOccurs="0" />
+              <xs:element name="Car" msprop:Generator_UserColumnName="Car" msprop:Generator_ColumnPropNameInTable="CarColumn" msprop:Generator_ColumnPropNameInRow="Car" msprop:Generator_ColumnVarNameInTable="columnCar" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeePrice" msprop:Generator_UserColumnName="EmployeePrice" msprop:Generator_ColumnPropNameInTable="EmployeePriceColumn" msprop:Generator_ColumnPropNameInRow="EmployeePrice" msprop:Generator_ColumnVarNameInTable="columnEmployeePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountDetail" msprop:Generator_UserColumnName="CountDetail" msprop:Generator_ColumnPropNameInTable="CountDetailColumn" msprop:Generator_ColumnPropNameInRow="CountDetail" msprop:Generator_ColumnVarNameInTable="columnCountDetail" type="xs:int" minOccurs="0" />
+              <xs:element name="Detail" msprop:Generator_UserColumnName="Detail" msprop:Generator_ColumnPropNameInTable="DetailColumn" msprop:Generator_ColumnPropNameInRow="Detail" msprop:Generator_ColumnVarNameInTable="columnDetail" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkReport" msprop:Generator_RowEvHandlerName="WorkReportRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkReportRowDeleted" msprop:Generator_RowDeletingName="WorkReportRowDeleting" msprop:Generator_RowEvArgName="WorkReportRowChangeEvent" msprop:Generator_TablePropName="WorkReport" msprop:Generator_RowChangedName="WorkReportRowChanged" msprop:Generator_RowChangingName="WorkReportRowChanging" msprop:Generator_TableClassName="WorkReportDataTable" msprop:Generator_RowClassName="WorkReportRow" msprop:Generator_TableVarName="tableWorkReport" msprop:Generator_UserTableName="WorkReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientName" msprop:Generator_ColumnPropNameInRow="ClientName" msprop:Generator_ColumnPropNameInTable="ClientNameColumn" msprop:Generator_ColumnVarNameInTable="columnClientName" msprop:Generator_UserColumnName="ClientName" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairDate" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnVarNameInTable="columnRepairDate" msprop:Generator_UserColumnName="RepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Detail" msprop:Generator_ColumnPropNameInRow="Detail" msprop:Generator_ColumnPropNameInTable="DetailColumn" msprop:Generator_ColumnVarNameInTable="columnDetail" msprop:Generator_UserColumnName="Detail" type="xs:string" minOccurs="0" />
+              <xs:element name="DetailNote" msprop:Generator_ColumnPropNameInRow="DetailNote" msprop:Generator_ColumnPropNameInTable="DetailNoteColumn" msprop:Generator_ColumnVarNameInTable="columnDetailNote" msprop:Generator_UserColumnName="DetailNote" type="xs:string" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" msprop:Generator_UserColumnName="DetailPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Employee" msprop:Generator_ColumnPropNameInRow="Employee" msprop:Generator_ColumnPropNameInTable="EmployeeColumn" msprop:Generator_ColumnVarNameInTable="columnEmployee" msprop:Generator_UserColumnName="Employee" type="xs:string" minOccurs="0" />
+              <xs:element name="Car" msprop:Generator_ColumnPropNameInRow="Car" msprop:Generator_ColumnPropNameInTable="CarColumn" msprop:Generator_ColumnVarNameInTable="columnCar" msprop:Generator_UserColumnName="Car" type="xs:string" minOccurs="0" />
+              <xs:element name="DateStart" msprop:Generator_ColumnPropNameInRow="DateStart" msprop:Generator_ColumnPropNameInTable="DateStartColumn" msprop:Generator_ColumnVarNameInTable="columnDateStart" msprop:Generator_UserColumnName="DateStart" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateEnd" msprop:Generator_ColumnPropNameInRow="DateEnd" msprop:Generator_ColumnPropNameInTable="DateEndColumn" msprop:Generator_ColumnVarNameInTable="columnDateEnd" msprop:Generator_UserColumnName="DateEnd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EmployeePrice" msprop:Generator_ColumnPropNameInRow="EmployeePrice" msprop:Generator_ColumnPropNameInTable="EmployeePriceColumn" msprop:Generator_ColumnVarNameInTable="columnEmployeePrice" msprop:Generator_UserColumnName="EmployeePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountDetail" msprop:Generator_ColumnPropNameInRow="CountDetail" msprop:Generator_ColumnPropNameInTable="CountDetailColumn" msprop:Generator_ColumnVarNameInTable="columnCountDetail" msprop:Generator_UserColumnName="CountDetail" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CharPeopleReport" msprop:Generator_RowEvHandlerName="CharPeopleReportRowChangeEventHandler" msprop:Generator_RowDeletedName="CharPeopleReportRowDeleted" msprop:Generator_RowDeletingName="CharPeopleReportRowDeleting" msprop:Generator_RowEvArgName="CharPeopleReportRowChangeEvent" msprop:Generator_TablePropName="CharPeopleReport" msprop:Generator_RowChangedName="CharPeopleReportRowChanged" msprop:Generator_RowChangingName="CharPeopleReportRowChanging" msprop:Generator_TableClassName="CharPeopleReportDataTable" msprop:Generator_RowClassName="CharPeopleReportRow" msprop:Generator_TableVarName="tableCharPeopleReport" msprop:Generator_UserTableName="CharPeopleReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Employee" msdata:Caption="Car" msprop:Generator_ColumnPropNameInRow="Employee" msprop:Generator_ColumnPropNameInTable="EmployeeColumn" msprop:Generator_ColumnVarNameInTable="columnEmployee" msprop:Generator_UserColumnName="Employee" type="xs:string" minOccurs="0" />
+              <xs:element name="RepairDate" msprop:Generator_ColumnPropNameInRow="RepairDate" msprop:Generator_ColumnPropNameInTable="RepairDateColumn" msprop:Generator_ColumnVarNameInTable="columnRepairDate" msprop:Generator_UserColumnName="RepairDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DetailPrice" msprop:Generator_ColumnPropNameInRow="DetailPrice" msprop:Generator_ColumnPropNameInTable="DetailPriceColumn" msprop:Generator_ColumnVarNameInTable="columnDetailPrice" msprop:Generator_UserColumnName="DetailPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EmployeePrice" msprop:Generator_ColumnPropNameInRow="EmployeePrice" msprop:Generator_ColumnPropNameInTable="EmployeePriceColumn" msprop:Generator_ColumnVarNameInTable="columnEmployeePrice" msprop:Generator_UserColumnName="EmployeePrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountDetail" msprop:Generator_ColumnPropNameInRow="CountDetail" msprop:Generator_ColumnPropNameInTable="CountDetailColumn" msprop:Generator_ColumnVarNameInTable="columnCountDetail" msprop:Generator_UserColumnName="CountDetail" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

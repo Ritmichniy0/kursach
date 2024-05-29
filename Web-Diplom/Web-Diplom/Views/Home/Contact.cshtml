@@ -1,0 +1,125 @@
+﻿@{
+	ViewData["Title"] = "Contact";
+}
+@model Web_Diplom.Models.AppointmentFormViewModel;
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_2.jpg');"
+		 data-stellar-background-ratio="0.5">
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div>
+				<div class="row no-gutters">
+					<div class="col-md-7">
+						<div class="p-md-5">
+							<h3 class="mb-4">Свяжитесь с нами</h3>
+							<form action="/Home/SendEmail?page=Contact" method="post" class="appointment">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="select-wrap">
+												<div class="icon"><span class="fa fa-chevron-down"></span></div>
+												<select name="Service" required class="form-control">
+													<option value="" selected>Выберите услугу</option>
+													<option value="Замена масла и фильтров">Замена масла и фильтров</option>
+													<option value="Замена и ремонт тормозной системы">Замена и ремонт тормозной системы</option>
+													<option value="Диагностика и ремонт двигателя">Диагностика и ремонт двигателя</option>
+													<option value="Ремонт и покраска кузова">Ремонт и покраска кузова</option>
+													<option value="Замена и ремонт электрики">Замена и ремонт электрики</option>
+													<option value="Другое">Другое</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name="Name" class="form-control" placeholder="Ваше имя" required>
+											@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="Ваш номер телефона" required>
+											@Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+										</div>
+									</div>
+									<div class="col-md-6">
+										<input type="date" name="Date" class="form-control" placeholder="Дата" required>
+										@Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="time" name="Time" class="form-control" placeholder="Время" required>
+											@Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea name="Message" cols="30" rows="7" class="form-control" placeholder="Сообщение"></textarea>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="submit" value="Отправить" class="btn btn-dark">
+										</div>
+									</div>
+								</div>
+							</form>
+							@if (TempData["SuccessMessage"] != null)
+							{
+								<div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+							}
+
+							@if (TempData["ErrorMessage"] != null)
+							{
+								<div class="alert alert-danger text-center" style="color: red;">@TempData["ErrorMessage"]</div>
+							}
+						</div>
+					</div>
+					<div class="col-md-5 d-flex">
+						<div class="info-wrap bg-primary w-100 p-lg-5">
+							<h3 class="mb-4 mt-md-4">Контакты для связи</h3>
+							<div class="dbox d-flex align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-map-marker"></span>
+								</div>
+								<div class="text pl-3">
+									<p>
+										<span>Адрес:</span><a href="https://yandex.ru/maps/-/CCUgnPAgWC">
+											Бакунинская ул., 81, стр. 2, Москва
+										</a>
+									</p>
+								</div>
+							</div>
+							<div class="dbox d-flex align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-phone"></span>
+								</div>
+								<div class="text pl-3">
+									<p>
+										<span>Телефон:</span> <a href="tel:+79671394143">+7 (967) 139-41-43</a>
+									</p>
+								</div>
+							</div>
+							<div class="dbox d-flex align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<span class="fa fa-paper-plane"></span>
+								</div>
+								<div class="text pl-3">
+									<p>
+										<span>Email:</span> <a href="mailto:andrey.kaverin.02@mail.ru">andrey.kaverin.02@mail.ru</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div id="map" class="map"></div>
+			</div>
+		</div>
+	</div>
+</section>

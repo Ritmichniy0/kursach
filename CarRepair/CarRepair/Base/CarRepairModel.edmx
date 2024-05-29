@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CarRepairModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID_Brand" />
+          </Key>
+          <Property Name="ID_Brand" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="ID_Car" />
+          </Key>
+          <Property Name="ID_Car" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model_ID" Type="int" Nullable="false" />
+          <Property Name="Color_ID" Type="int" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="VIN" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Client_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ID_Client" />
+          </Key>
+          <Property Name="ID_Client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SecondName" Type="varchar" MaxLength="25" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ID_Color" />
+          </Key>
+          <Property Name="ID_Color" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID_Department" />
+          </Key>
+          <Property Name="ID_Department" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="ID_Detail" />
+          </Key>
+          <Property Name="ID_Detail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetailRepair">
+          <Key>
+            <PropertyRef Name="ID_DetailRepair" />
+          </Key>
+          <Property Name="ID_DetailRepair" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RepairNote" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Detail_ID" Type="int" Nullable="false" />
+          <Property Name="Count_Detail" Type="int" Nullable="false" />
+          <Property Name="Repair_ID" Type="int" Nullable="false" />
+          <Property Name="Employee_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Employee" />
+          </Key>
+          <Property Name="ID_Employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SecondName" Type="varchar" MaxLength="20" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Specialisation_ID" Type="int" />
+          <Property Name="Role_ID" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="ID_Model" />
+          </Key>
+          <Property Name="ID_Model" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand_ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Year" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="ID_Repair" />
+          </Key>
+          <Property Name="ID_Repair" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateRepairBegin" Type="datetime" Nullable="false" />
+          <Property Name="DateRepairEnd" Type="datetime" />
+          <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Car_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeRole" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Specialisation">
+          <Key>
+            <PropertyRef Name="ID_Specialisation" />
+          </Key>
+          <Property Name="ID_Specialisation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department_ID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Car_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ID_Client" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ID_Color" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Color_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Models">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="ID_Model" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Model_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETAILRE_REPAIR_DE_REPAIR">
+          <End Role="Repair" Type="Self.Repair" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repair">
+              <PropertyRef Name="ID_Repair" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Repair_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailRepair_Detail">
+          <End Role="Detail" Type="Self.Detail" Multiplicity="1" />
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Detail">
+              <PropertyRef Name="ID_Detail" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Detail_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailRepair_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Specialisation">
+          <End Role="Specialisation" Type="Self.Specialisation" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialisation">
+              <PropertyRef Name="ID_Specialisation" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Specialisation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Models_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="Model" Type="Self.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="ID_Brand" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="Brand_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REPAIR_CAR_REPAI_CAR">
+          <End Role="Car" Type="Self.Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="ID_Car" />
+            </Principal>
+            <Dependent Role="Repair">
+              <PropertyRef Name="Car_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Specialisation_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Specialisation" Type="Self.Specialisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID_Department" />
+            </Principal>
+            <Dependent Role="Specialisation">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CarRepairModelContainer">
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detail" EntityType="Self.Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetailRepair" EntityType="Self.DetailRepair" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Repair" EntityType="Self.Repair" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialisation" EntityType="Self.Specialisation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Car_Client" Association="Self.FK_Car_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Color" Association="Self.FK_Car_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Models" Association="Self.FK_Car_Models">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETAILRE_REPAIR_DE_REPAIR" Association="Self.FK_DETAILRE_REPAIR_DE_REPAIR">
+            <End Role="Repair" EntitySet="Repair" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailRepair_Detail" Association="Self.FK_DetailRepair_Detail">
+            <End Role="Detail" EntitySet="Detail" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailRepair_Employee" Association="Self.FK_DetailRepair_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Specialisation" Association="Self.FK_Employee_Specialisation">
+            <End Role="Specialisation" EntitySet="Specialisation" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Models_Brand" Association="Self.FK_Models_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REPAIR_CAR_REPAI_CAR" Association="Self.FK_REPAIR_CAR_REPAI_CAR">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Repair" EntitySet="Repair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Specialisation_Department" Association="Self.FK_Specialisation_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Specialisation" EntitySet="Specialisation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarRepairModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID_Brand" />
+          </Key>
+          <Property Name="ID_Brand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Model" Relationship="Self.FK_Models_Brand" FromRole="Brand" ToRole="Model" />
+        </EntityType>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="ID_Car" />
+          </Key>
+          <Property Name="ID_Car" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model_ID" Type="Int32" Nullable="false" />
+          <Property Name="Color_ID" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Client_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Car_Client" FromRole="Car" ToRole="Client" />
+          <NavigationProperty Name="Color" Relationship="Self.FK_Car_Color" FromRole="Car" ToRole="Color" />
+          <NavigationProperty Name="Model" Relationship="Self.FK_Car_Models" FromRole="Car" ToRole="Model" />
+          <NavigationProperty Name="Repair" Relationship="Self.FK_REPAIR_CAR_REPAI_CAR" FromRole="Car" ToRole="Repair" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ID_Client" />
+          </Key>
+          <Property Name="ID_Client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_Car_Client" FromRole="Client" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ID_Color" />
+          </Key>
+          <Property Name="ID_Color" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_Car_Color" FromRole="Color" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID_Department" />
+          </Key>
+          <Property Name="ID_Department" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Specialisation" Relationship="Self.FK_Specialisation_Department" FromRole="Department" ToRole="Specialisation" />
+        </EntityType>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="ID_Detail" />
+          </Key>
+          <Property Name="ID_Detail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="DetailRepair" Relationship="Self.FK_DetailRepair_Detail" FromRole="Detail" ToRole="DetailRepair" />
+        </EntityType>
+        <EntityType Name="DetailRepair">
+          <Key>
+            <PropertyRef Name="ID_DetailRepair" />
+          </Key>
+          <Property Name="ID_DetailRepair" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RepairNote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Detail_ID" Type="Int32" Nullable="false" />
+          <Property Name="Count_Detail" Type="Int32" Nullable="false" />
+          <Property Name="Repair_ID" Type="Int32" Nullable="false" />
+          <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Detail" Relationship="Self.FK_DetailRepair_Detail" FromRole="DetailRepair" ToRole="Detail" />
+          <NavigationProperty Name="Repair" Relationship="Self.FK_DETAILRE_REPAIR_DE_REPAIR" FromRole="DetailRepair" ToRole="Repair" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_DetailRepair_Employee" FromRole="DetailRepair" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID_Employee" />
+          </Key>
+          <Property Name="ID_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Specialisation_ID" Type="Int32" />
+          <Property Name="Role_ID" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DetailRepair" Relationship="Self.FK_DetailRepair_Employee" FromRole="Employee" ToRole="DetailRepair" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Employee_Role" FromRole="Employee" ToRole="Role" />
+          <NavigationProperty Name="Specialisation" Relationship="Self.FK_Employee_Specialisation" FromRole="Employee" ToRole="Specialisation" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="ID_Model" />
+          </Key>
+          <Property Name="ID_Model" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand_ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Year" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_Models_Brand" FromRole="Model" ToRole="Brand" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_Car_Models" FromRole="Model" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="ID_Repair" />
+          </Key>
+          <Property Name="ID_Repair" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateRepairBegin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateRepairEnd" Type="DateTime" Precision="3" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Car_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="Self.FK_REPAIR_CAR_REPAI_CAR" FromRole="Repair" ToRole="Car" />
+          <NavigationProperty Name="DetailRepair" Relationship="Self.FK_DETAILRE_REPAIR_DE_REPAIR" FromRole="Repair" ToRole="DetailRepair" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeRole" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Role" FromRole="Role" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Specialisation">
+          <Key>
+            <PropertyRef Name="ID_Specialisation" />
+          </Key>
+          <Property Name="ID_Specialisation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Department_ID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Specialisation_Department" FromRole="Specialisation" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Specialisation" FromRole="Specialisation" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Models_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="Model" Type="Self.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="ID_Brand" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="Brand_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="ID_Client" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ID_Color" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Color_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Models">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="ID_Model" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="Model_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REPAIR_CAR_REPAI_CAR">
+          <End Role="Car" Type="Self.Car" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Repair" Type="Self.Repair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car">
+              <PropertyRef Name="ID_Car" />
+            </Principal>
+            <Dependent Role="Repair">
+              <PropertyRef Name="Car_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Specialisation_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Specialisation" Type="Self.Specialisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID_Department" />
+            </Principal>
+            <Dependent Role="Specialisation">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailRepair_Detail">
+          <End Role="Detail" Type="Self.Detail" Multiplicity="1" />
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Detail">
+              <PropertyRef Name="ID_Detail" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Detail_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DETAILRE_REPAIR_DE_REPAIR">
+          <End Role="Repair" Type="Self.Repair" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repair">
+              <PropertyRef Name="ID_Repair" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Repair_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetailRepair_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="DetailRepair" Type="Self.DetailRepair" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="ID_Employee" />
+            </Principal>
+            <Dependent Role="DetailRepair">
+              <PropertyRef Name="Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Specialisation">
+          <End Role="Specialisation" Type="Self.Specialisation" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialisation">
+              <PropertyRef Name="ID_Specialisation" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Specialisation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarRepairEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Brand" EntityType="Self.Brand" />
+          <EntitySet Name="Car" EntityType="Self.Car" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Color" EntityType="Self.Color" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Detail" EntityType="Self.Detail" />
+          <EntitySet Name="DetailRepair" EntityType="Self.DetailRepair" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Model" EntityType="Self.Model" />
+          <EntitySet Name="Repair" EntityType="Self.Repair" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Specialisation" EntityType="Self.Specialisation" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Models_Brand" Association="Self.FK_Models_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Client" Association="Self.FK_Car_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Color" Association="Self.FK_Car_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Models" Association="Self.FK_Car_Models">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REPAIR_CAR_REPAI_CAR" Association="Self.FK_REPAIR_CAR_REPAI_CAR">
+            <End Role="Car" EntitySet="Car" />
+            <End Role="Repair" EntitySet="Repair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Specialisation_Department" Association="Self.FK_Specialisation_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Specialisation" EntitySet="Specialisation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailRepair_Detail" Association="Self.FK_DetailRepair_Detail">
+            <End Role="Detail" EntitySet="Detail" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DETAILRE_REPAIR_DE_REPAIR" Association="Self.FK_DETAILRE_REPAIR_DE_REPAIR">
+            <End Role="Repair" EntitySet="Repair" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetailRepair_Employee" Association="Self.FK_DetailRepair_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="DetailRepair" EntitySet="DetailRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Role" Association="Self.FK_Employee_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Specialisation" Association="Self.FK_Employee_Specialisation">
+            <End Role="Specialisation" EntitySet="Specialisation" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CarRepairModelContainer" CdmEntityContainer="CarRepairEntities">
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="CarRepairModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="ID_Brand" ColumnName="ID_Brand" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Car">
+            <EntityTypeMapping TypeName="CarRepairModel.Car">
+              <MappingFragment StoreEntitySet="Car">
+                <ScalarProperty Name="ID_Car" ColumnName="ID_Car" />
+                <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+                <ScalarProperty Name="Color_ID" ColumnName="Color_ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="CarRepairModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="ID_Client" ColumnName="ID_Client" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Color">
+            <EntityTypeMapping TypeName="CarRepairModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="ID_Color" ColumnName="ID_Color" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="CarRepairModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="ID_Department" ColumnName="ID_Department" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detail">
+            <EntityTypeMapping TypeName="CarRepairModel.Detail">
+              <MappingFragment StoreEntitySet="Detail">
+                <ScalarProperty Name="ID_Detail" ColumnName="ID_Detail" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetailRepair">
+            <EntityTypeMapping TypeName="CarRepairModel.DetailRepair">
+              <MappingFragment StoreEntitySet="DetailRepair">
+                <ScalarProperty Name="ID_DetailRepair" ColumnName="ID_DetailRepair" />
+                <ScalarProperty Name="RepairNote" ColumnName="RepairNote" />
+                <ScalarProperty Name="Detail_ID" ColumnName="Detail_ID" />
+                <ScalarProperty Name="Count_Detail" ColumnName="Count_Detail" />
+                <ScalarProperty Name="Repair_ID" ColumnName="Repair_ID" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="CarRepairModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Specialisation_ID" ColumnName="Specialisation_ID" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Model">
+            <EntityTypeMapping TypeName="CarRepairModel.Model">
+              <MappingFragment StoreEntitySet="Model">
+                <ScalarProperty Name="ID_Model" ColumnName="ID_Model" />
+                <ScalarProperty Name="Brand_ID" ColumnName="Brand_ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repair">
+            <EntityTypeMapping TypeName="CarRepairModel.Repair">
+              <MappingFragment StoreEntitySet="Repair">
+                <ScalarProperty Name="ID_Repair" ColumnName="ID_Repair" />
+                <ScalarProperty Name="DateRepairBegin" ColumnName="DateRepairBegin" />
+                <ScalarProperty Name="DateRepairEnd" ColumnName="DateRepairEnd" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Car_ID" ColumnName="Car_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="CarRepairModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="TypeRole" ColumnName="TypeRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialisation">
+            <EntityTypeMapping TypeName="CarRepairModel.Specialisation">
+              <MappingFragment StoreEntitySet="Specialisation">
+                <ScalarProperty Name="ID_Specialisation" ColumnName="ID_Specialisation" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CarRepairModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
